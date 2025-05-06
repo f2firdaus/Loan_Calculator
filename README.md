@@ -21,7 +21,7 @@ Provide step-by-step instructions on how to get the project running on a local m
 
     ```bash
     git clone https://github.com/f2firdaus/Loan_Calculator
-   
+   live demo link:  https://loanemicalculator1.netlify.app/
 
 3.  **Install dependencies:**
 
