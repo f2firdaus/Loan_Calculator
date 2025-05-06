@@ -1,8 +1,9 @@
-import React from 'react'
 
 const about = () => {
   return (
-    <div>about</div>
+      <>
+          <a href="https://github.com/f2firdaus/Loan_Calculator" target="_blank">Github Repo</a>
+      </>
   )
 }
 
