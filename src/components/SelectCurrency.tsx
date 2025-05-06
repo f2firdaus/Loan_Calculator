@@ -1,5 +1,7 @@
 
-import { Box, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
+
+import { Box, InputLabel, MenuItem, FormControl, Select, type SelectChangeEvent } from '@mui/material';
+
 
 type Props = {
   selectedCurrency: string;
@@ -9,7 +11,7 @@ type Props = {
 const currencyList = ["USD", "EUR", "INR", "GBP", "JPY", "AUD", "CAD"];
 
 const SelectCurrency = ({ selectedCurrency, setSelectedCurrency }: Props) => {
-  const handleChange = (event: ChangeEvent<{ name?: string; value: string }>) => {
+  const handleChange = (event: SelectChangeEvent) => {
     setSelectedCurrency(event.target.value);
   };
 
