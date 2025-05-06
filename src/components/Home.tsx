@@ -8,7 +8,7 @@ import SelectCurrency from "../components/SelectCurrency";
 import { Typography } from "@mui/material";
 
 const Home = () => {
-  const [currency, setCurrency] = useState('USD'); // Example: Initialize with EUR
+  const [currency, setCurrency] = useState('USD'); 
   const { rates, error } = useExchangeRates(currency);
   const [loanData, setLoanData] = useState<{
     amount: number;
@@ -17,8 +17,8 @@ const Home = () => {
   } | null>(null);
   const [show, setShow] = useState(false);
 
-  console.log("Home - Currency:", currency); // Log currency changes
-  console.log("Home - Rates:", rates);       // Log rates updates
+  console.log("Home - Currency:", currency); 
+  console.log("Home - Rates:", rates);       
 
   const handleCurrencyChange = (newCurrency: string) => {
     setCurrency(newCurrency);

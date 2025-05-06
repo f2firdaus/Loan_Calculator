@@ -1,9 +1,9 @@
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './pages/Home'; // Adjust path as needed
-import ExchangeTable from './components/ExchangeRateTable'; // Adjust path as needed
-import NotFound from './pages/NotFound'; // Adjust path as needed
-import Navbar from './components/Navbar'; // Adjust path as needed
+import Home from './pages/Home'; 
+import ExchangeTable from './components/ExchangeRateTable'; 
+import NotFound from './pages/NotFound'; 
+import Navbar from './components/Navbar'; 
 
 import About from './pages/About';
 

@@ -17,19 +17,18 @@ export const useExchangeRates = (baseCurrency: string) => {
       } catch (err: any) {
         console.error(`Error fetching exchange rates for ${currency}`, err);
         setError(`Failed to fetch exchange rates for ${currency}.`);
-        // Optionally, you could keep the previous rates or set to an empty object
-        // setRates({});
+       
       }
     };
 
-    // Fetch USD rates on initial mount
+    
     fetchRates('USD');
 
-    // Fetch rates for the selected baseCurrency whenever it changes
+   
     if (baseCurrency && baseCurrency !== 'USD') {
       fetchRates(baseCurrency);
     }
-  }, [baseCurrency, API]); // Include API key in dependency array
+  }, [baseCurrency, API]); 
 
   return { rates, error };
 };

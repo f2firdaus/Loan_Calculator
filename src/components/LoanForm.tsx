@@ -54,7 +54,7 @@ const LoanForm = ({ onSubmit }: Props) => {
 
     if (!amountError && !rateError && !yearError) {
       onSubmit({ amount: parsedAmount, rate: parsedRate, year: parsedYear });
-      setSubmitted(true); // Trigger display of EMI
+      setSubmitted(true); 
     }
   };
 
@@ -102,7 +102,7 @@ const LoanForm = ({ onSubmit }: Props) => {
         CALCULATE
       </Button>
 
-      {/* Only show EMI after successful submit */}
+      
       {submitted && isValidInput && (
         <Typography variant="h6" sx={{ mt: 2 }}>
           Monthly EMI: $ {emi}

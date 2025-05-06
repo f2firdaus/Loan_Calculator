@@ -8,13 +8,13 @@ import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
 import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
-import { useExchangeRates } from '../hooks/useExchangerate'; // Adjust the import path
+import { useExchangeRates } from '../hooks/useExchangerate'; 
 import { Table } from '@mui/material';
 
 
 
 function ExchangeRateTable() {
-  const { rates, error } = useExchangeRates('USD'); // Always fetch USD-based rates
+  const { rates, error } = useExchangeRates('USD'); 
   const [page, setPage] = useState(0);
   const [rowsPerPage] = useState(10);
 
@@ -22,7 +22,7 @@ function ExchangeRateTable() {
     return rates ? Object.entries(rates) : [];
   }, [rates]);
 
-  // ✅ Correct type
+
 const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
   setPage(newPage);
 };
