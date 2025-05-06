@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# Loan Calculator with Currency Exchange
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that allows users to calculate loan payments and view the amortization schedule in different currencies.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+Provide step-by-step instructions on how to get the project running on a local machine.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Prerequisites:**
+    * [Node.js](https://nodejs.org/) (version >= X.X.X)
+    * [npm](https://www.npmjs.com/) (version >= Y.Y.Y) or [yarn](https://yarnpkg.com/) (version >= Z.Z.Z)
+    * (Mention any other dependencies like a specific database if you're using one)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2.  **Clone the repository:**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    ```bash
+    git clone [YOUR_REPOSITORY_URL_HERE]
+    cd [YOUR_PROJECT_DIRECTORY]
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3.  **Install dependencies:**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+    Using npm:
+    ```bash
+    npm install
+    ```
+    
+
+4.  **Run the application:**
+
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
+
+    This will typically start the development server at `http://localhost:5173`.
+
+5. ## Usage
+
+Explain how to use the loan calculator and currency exchange features.
+
+1.  **Loan Calculation:**
+    * Navigate to the home page (`/`).
+    * Enter the loan amount in the "Loan Amount" field.
+    * Enter the annual interest rate in the "Interest Rate (%)" field.
+    * Enter the loan term in years in the "Term (Years)" field.
+    * Click the "CALCULATE" button.
+    * The monthly EMI and amortization schedule will be displayed below.
+
+2.  **Currency Exchange:**
+    * A dropdown menu labeled "Currency" allows you to select a different currency.
+    * Upon selecting a new currency, the loan amounts in the amortization table will be converted to the chosen currency, and the appropriate currency code will be displayed.
+
+3. ## Features
+
+* Calculates monthly EMI (Equated Monthly Installment) for a loan.
+* Generates a detailed amortization schedule showing principal, interest paid, and remaining balance for each month.
+* Allows users to select different currencies from a dropdown.
+* Dynamically converts the loan amounts in the amortization schedule to the selected currency using real-time (or near real-time) exchange rates fetched from an API.
+* Displays the currency code (e.g., USD, INR, EUR) alongside the loan amounts.
+
+
+## Technologies Used
+
+* [React](https://react.dev/) - Frontend JavaScript library for building the user interface.
+* [Material UI](https://mui.com/) - Component library for a consistent and responsive UI.
+* [axios](https://axios-http.com/) - Promise-based HTTP client for making API requests.
+* (Mention any other libraries or tools you used, e.g., state management libraries like useState, custom hooks you created like `useExchangeRates`, routing libraries if you used them explicitly outside of the main app)
+
+
+
+
+
+---
+
