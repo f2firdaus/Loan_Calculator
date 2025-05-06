@@ -12,7 +12,7 @@ export const useExchangeRates = (baseCurrency: string) => {
         const response = await axios.get(
           `https://v6.exchangerate-api.com/v6/${API}/latest/${currency}`
         );
-        console.log(`Fetched rates for ${currency}:`, response.data.conversion_rates);
+     
         setRates(response.data.conversion_rates);
       } catch (err: any) {
         console.error(`Error fetching exchange rates for ${currency}`, err);

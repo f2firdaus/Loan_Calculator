@@ -24,7 +24,7 @@ function AppContent() {
       {shouldShowNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/exchange" element={<ExchangeTable />} />
+        <Route path="/exchange_rates_live" element={<ExchangeTable />} />
         <Route path="/about" element={<About/>} />
         <Route path="/notfound" element={<NotFound />} />
       </Routes>

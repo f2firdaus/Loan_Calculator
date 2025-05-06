@@ -29,7 +29,7 @@ interface Props {
 const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "Exchange Rates (Live)", path: "exchange_rates_live" },
+  { label: "Exchange Rates (Live)", path: "/exchange_rates_live" },
   { label: "About", path: "/about" },
   { label: "Error Page", path: "/notfound" },
 ];
