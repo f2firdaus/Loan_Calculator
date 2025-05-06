@@ -6,11 +6,7 @@ interface EmiResult {
   totalPayment: number;
 }
 
-export const useEmiCalculator = (
-  principal: number,
-  annualRate: number,
-  durationYears: number
-): EmiResult => {
+export const useEmiCalculator = (principal: number,annualRate: number,durationYears: number): EmiResult => {
   return useMemo(() => {
     const durationMonths = durationYears * 12;
     const monthlyRate = annualRate / 12 / 100;

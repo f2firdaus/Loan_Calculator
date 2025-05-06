@@ -63,10 +63,10 @@ const LoanForm = ({ onSubmit }: Props) => {
       <Typography variant="h5" gutterBottom>
         Loan Calculator Dashboard
       </Typography>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
         <TextField
           label="Loan Amount"
-          type="number"
+    
           value={amount}
           onChange={(e) => {
             setAmount(e.target.value);
@@ -77,7 +77,7 @@ const LoanForm = ({ onSubmit }: Props) => {
         />
         <TextField
           label="Interest Rate (%)"
-          type="number"
+  
           value={rate}
           onChange={(e) => {
             setRate(e.target.value);
@@ -88,7 +88,7 @@ const LoanForm = ({ onSubmit }: Props) => {
         />
         <TextField
           label="Term (Years)"
-          type="number"
+     
           value={year}
           onChange={(e) => {
             setYear(e.target.value);
@@ -105,7 +105,7 @@ const LoanForm = ({ onSubmit }: Props) => {
       {/* Only show EMI after successful submit */}
       {submitted && isValidInput && (
         <Typography variant="h6" sx={{ mt: 2 }}>
-          Monthly EMI: ${emi}
+          Monthly EMI: $ {emi}
         </Typography>
       )}
     </Box>

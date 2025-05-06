@@ -29,7 +29,7 @@ interface Props {
 const drawerWidth = 240;
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "Exchange Rates (Live)", path: "/exchange" },
+  { label: "Exchange Rates (Live)", path: "exchange_rates_live" },
   { label: "About", path: "/about" },
   { label: "Error Page", path: "/notfound" },
 ];
@@ -77,7 +77,7 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex",width:"80%" }}>
+    <Box sx={{ display: "flex",width:"10%",marginLeft:{sm:"40px"}}}>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>

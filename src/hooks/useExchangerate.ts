@@ -1,42 +1,35 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-// Define the types for the response data
-interface ExchangeRatesResponse {
-  result: string;
-  conversion_rates: {
-    [key: string]: number;
-  };
-}
-
-export const useCurrencyExchange = () => {
-  const [rates, setRates] = useState<Record<string, number>>({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string>("");
-
-  const fetchRates = async () => {
-    try {
-      const response = await axios.get<ExchangeRatesResponse>(
-        `https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_API_KEY}/latest/USD`
-      );
-       
-        console.log(data.conversion_rates)
-      if (data.result === "success") {
-        setRates(data.conversion_rates);
-      } else {
-        setError("Failed to fetch exchange rates.");
-      }
-    } catch (err) {
-      console.error(err);
-      setError("API error");
-    } finally {
-      setLoading(false);
-    }
-  };
+export const useExchangeRates = (baseCurrency: string) => {
+  const [rates, setRates] = useState<{ [key: string]: number }>({});
+  const API = import.meta.env.VITE_EXCHANGE_RATE_API_KEY;
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchRates();
-  }, []);
+    const fetchRates = async (currency: string) => {
+      try {
+        const response = await axios.get(
+          `https://v6.exchangerate-api.com/v6/${API}/latest/${currency}`
+        );
+        console.log(`Fetched rates for ${currency}:`, response.data.conversion_rates);
+        setRates(response.data.conversion_rates);
+      } catch (err: any) {
+        console.error(`Error fetching exchange rates for ${currency}`, err);
+        setError(`Failed to fetch exchange rates for ${currency}.`);
+        // Optionally, you could keep the previous rates or set to an empty object
+        // setRates({});
+      }
+    };
 
-  return { rates, loading, error };
+    // Fetch USD rates on initial mount
+    fetchRates('USD');
+
+    // Fetch rates for the selected baseCurrency whenever it changes
+    if (baseCurrency && baseCurrency !== 'USD') {
+      fetchRates(baseCurrency);
+    }
+  }, [baseCurrency, API]); // Include API key in dependency array
+
+  return { rates, error };
 };
