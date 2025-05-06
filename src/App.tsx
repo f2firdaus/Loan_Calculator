@@ -5,6 +5,8 @@ import ExchangeTable from './components/ExchangeRateTable'; // Adjust path as ne
 import NotFound from './pages/NotFound'; // Adjust path as needed
 import Navbar from './components/Navbar'; // Adjust path as needed
 
+import About from './pages/About';
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/exchange" element={<ExchangeTable />} />
+        <Route path="/about" element={<About/>} />
         <Route path="/notfound" element={<NotFound />} />
       </Routes>
     </>
