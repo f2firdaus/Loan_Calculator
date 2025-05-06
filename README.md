@@ -20,9 +20,8 @@ Provide step-by-step instructions on how to get the project running on a local m
 2.  **Clone the repository:**
 
     ```bash
-    git clone [YOUR_REPOSITORY_URL_HERE]
-    cd [YOUR_PROJECT_DIRECTORY]
-    ```
+    git clone https://github.com/f2firdaus/Loan_Calculator
+   
 
 3.  **Install dependencies:**
 
