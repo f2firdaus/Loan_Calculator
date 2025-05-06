@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+
 import { Box, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 
 type Props = {

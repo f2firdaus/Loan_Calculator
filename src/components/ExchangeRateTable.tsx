@@ -22,9 +22,11 @@ function ExchangeRateTable() {
     return rates ? Object.entries(rates) : [];
   }, [rates]);
 
-  const handleChangePage = (event: React.ChangeEvent<unknown>, newPage: number) => {
-    setPage(newPage);
-  };
+  // ✅ Correct type
+const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
+  setPage(newPage);
+};
+
 
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - exchangeRatePairs.length) : 0;

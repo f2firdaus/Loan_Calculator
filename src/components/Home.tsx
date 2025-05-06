@@ -20,9 +20,10 @@ const Home = () => {
   console.log("Home - Currency:", currency); // Log currency changes
   console.log("Home - Rates:", rates);       // Log rates updates
 
-  const handleCurrencyChange = (newCurrency) => {
+  const handleCurrencyChange = (newCurrency: string) => {
     setCurrency(newCurrency);
   };
+  
 
   return (
     <Box component="div" sx={{ marginLeft: { sm: "80px" } }}>

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ExchangeRateTable from '../components/ExchangeRateTable'
 
 const ExchangeTable = () => {

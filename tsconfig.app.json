@@ -21,10 +21,7 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
-    /* Add this line to bypass errors */
-    "noEmitOnError": false
+    "noUncheckedSideEffectImports": true
   },
   "include": ["src"]
 }
